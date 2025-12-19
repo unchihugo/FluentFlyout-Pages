@@ -1,0 +1,83 @@
+---
+import Nabvar from "../components/Navbar.astro"
+import Footer from "../components/Footer.astro"
+import "../styles/styles.css"
+import "../styles/output.css"
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{Astro.props.title}</title>
+		<link
+			rel="icon"
+			type="image/png"
+			href="/favicon-96x96.png"
+			sizes="96x96"
+		/>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<meta name="apple-mobile-web-app-title" content="FluentFlyout" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta
+			name="description"
+			content="FluentFlyout is a free, open-source media control flyout for Windows 11. Modern flyouts with Fluent Design, taskbar widget, and full media playback controls. Download from Microsoft Store, GitHub or WinGet."
+		/>
+		<meta
+			name="keywords"
+			content="FluentFlyout, Fluent, Windows 11, Flyout, Media Control, Taskbar Widget, Open Source, Free, Customizable"
+		/>
+		<meta name="author" content="unchihugo" />
+		<link rel="canonical" href="https://fluentflyout.com/" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://fluentflyout.com/" />
+		<meta
+			property="og:title"
+			content="FluentFlyout - The modern Flyout app for Windows 11"
+		/>
+		<meta
+			property="og:description"
+			content="FluentFlyout is a modern media flyout app for Windows, built with Fluent 2 Design principles."
+		/>
+		<meta
+			property="og:image"
+			content="https://fluentflyout.com/images/FluentFlyoutHero-NoTitle.webp"
+		/>
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://fluentflyout.com/" />
+		<meta
+			name="twitter:title"
+			content="FluentFlyout - The modern Flyout app for Windows 11"
+		/>
+		<meta
+			name="twitter:description"
+			content="FluentFlyout is a modern media flyout app for Windows, built with Fluent 2 Design principles."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://fluentflyout.com/images/FluentFlyoutHero-NoTitle.webp"
+		/>
+
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+
+		<link rel="stylesheet" href="../styles/styles.css" />
+		<link rel="stylesheet" href="../styles/output.css" />
+		<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+	</head>
+	<body class="bg-gray-900 text-white overflow-x-hidden">
+		<Nabvar />
+		<slot />
+		<Footer />
+		<script src="../script.js"></script>
+	</body>
+</html>

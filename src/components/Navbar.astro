@@ -1,0 +1,44 @@
+---
+import fluentFlyoutTitle from "../assets/FluentFlyoutTitle.webp"
+---
+
+<nav
+	id="main-nav"
+	class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-xl backdrop-contrast-150 border-b border-gray-500/50 transition-opacity duration-700">
+	<div class="container mx-auto px-6 py-2 flex justify-between items-center">
+		<a
+			href="#"
+			id="nav-logo"
+			class="opacity-0 pointer-events-none transition-opacity duration-300"
+			><img
+				src={fluentFlyoutTitle.src}
+				alt="FluentFlyout Logo"
+				class="h-9"
+			/></a
+		>
+		<div class="hidden md:flex space-x-6">
+			<a
+				href="#features"
+				class="text-gray-300 hover:text-primary transition">Features</a
+			>
+			<a href="#free" class="text-gray-300 hover:text-primary transition"
+				>Install</a
+			>
+			<a
+				href="https://github.com/unchihugo/FluentFlyout"
+				target="_blank"
+				class="text-gray-300 hover:text-primary transition">GitHub</a
+			>
+		</div>
+		<a
+			href="https://apps.microsoft.com/detail/9N45NSM4TNBP?mode=direct"
+			id="nav-download"
+			class="hidden sm:inline-block opacity-0 pointer-events-none transition-opacity duration-300">
+			<img
+				src="https://get.microsoft.com/images/en-us%20light.svg"
+				alt="Get it from Microsoft"
+				class="h-12 sm:h-12 transform button-hover-effect transition-transform duration-300"
+			/>
+		</a>
+	</div>
+</nav>
