@@ -5,6 +5,7 @@ import fluentFlyoutHero_NoTitle from "../assets/FluentFlyoutHero-NoTitle.webp"
 import fluentFlyoutTitle from "../assets/FluentFlyoutTitle.webp"
 import demo3Alt from "../assets/Demo3-alt.webp"
 import demoTaskbar from "../assets/DemoTaskbar.webp"
+import FaqItem from "../components/FaqItem.astro"
 ---
 
 <Layout title="FluentFlyout - The modern Flyout app for Windows 11">
@@ -333,57 +334,273 @@ import demoTaskbar from "../assets/DemoTaskbar.webp"
 			</a>
 		</div>
 
-		<div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-			<a
-				href="https://www.windowscentral.com/microsoft/windows-11/microsoft-is-too-busy-with-ai-to-fix-windows-11s-design-so-developers-stepped-up"
-				target="_blank"
-				class="block group">
-				<blockquote
-					class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
-					<div
-						class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
-						"
-					</div>
-					<p
-						class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
-						Windows 11 may have just gained another must-have app.
-					</p>
-					<footer class="flex items-center gap-3">
-						<div
-							class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
-						</div>
-						<span
-							class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
-							>Windows Central</span
-						>
-					</footer>
-				</blockquote>
-			</a>
-			<a
-				href="https://www.neowin.net/news/this-free-unofficial-app-promises-big-list-of-modern-windows-11-fluent-customization-options/"
-				target="_blank"
-				class="block group">
-				<blockquote
-					class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
-					<div
-						class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
-						"
-					</div>
-					<p
-						class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
-						Does a better job than what Microsoft officially offers.
-					</p>
-					<footer class="flex items-center gap-3">
-						<div
-							class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
-						</div>
-						<span
-							class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
-							>Neowin</span
-						>
-					</footer>
-				</blockquote>
-			</a>
+		<div class="relative overflow-hidden">
+			<div class="press-scroll-container">
+				<div class="press-scroll-content">
+					<!-- First set -->
+					<a
+						href="https://www.phonandroid.com/cette-application-qui-rend-windows-11-beaucoup-plus-beau-est-encore-meilleur-grace-a-sa-derniere-mise-a-jour.html"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								Truly applies the Flyout philosophy in order to
+								provide better control over apps.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Phonandroid</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<a
+						href="https://www.windowscentral.com/microsoft/windows-11/microsoft-is-too-busy-with-ai-to-fix-windows-11s-design-so-developers-stepped-up"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								Windows 11 may have just gained another
+								must-have app.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Windows Central</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<a
+						href="https://www.softzone.es/noticias/programas/fluentflyout-personalizar-windows/"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								Fixes everything you don't like about Windows
+								11.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Softzone</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<a
+						href="https://www.neowin.net/news/this-free-unofficial-app-promises-big-list-of-modern-windows-11-fluent-customization-options/"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								Does a better job than what Microsoft officially
+								offers.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Neowin</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<a
+						href="https://www.youtube.com/watch?v=3rZl4f4UuB0"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								This free app makes Windows 11 look so much
+								better.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Tech Enthusiast</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<!-- Duplicate set for seamless loop -->
+					<a
+						href="https://www.phonandroid.com/cette-application-qui-rend-windows-11-beaucoup-plus-beau-est-encore-meilleur-grace-a-sa-derniere-mise-a-jour.html"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								Truly applies the Flyout philosophy in order to
+								provide better control over apps.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Phonandroid</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<a
+						href="https://www.windowscentral.com/microsoft/windows-11/microsoft-is-too-busy-with-ai-to-fix-windows-11s-design-so-developers-stepped-up"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								Windows 11 may have just gained another
+								must-have app.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Windows Central</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<a
+						href="https://www.softzone.es/noticias/programas/fluentflyout-personalizar-windows/"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								Fixes everything you don't like about Windows
+								11.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Softzone</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<a
+						href="https://www.neowin.net/news/this-free-unofficial-app-promises-big-list-of-modern-windows-11-fluent-customization-options/"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								Does a better job than what Microsoft officially
+								offers.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Neowin</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+					<a
+						href="https://www.youtube.com/watch?v=3rZl4f4UuB0"
+						target="_blank"
+						class="block group press-quote-card">
+						<blockquote
+							class="h-full bg-gray-800/30 p-8 rounded-xl border border-gray-600/50 group-hover:bg-gray-700/50 transition-all duration-300 relative">
+							<div
+								class="absolute top-4 left-4 text-gray-600/30 text-6xl font-serif leading-none">
+								"
+							</div>
+							<p
+								class="text-lg text-gray-300 italic mb-2 relative z-10 pt-2">
+								This free app makes Windows 11 look so much
+								better.
+							</p>
+							<footer class="flex items-center gap-3">
+								<div
+									class="h-px flex-1 bg-gray-700 group-hover:bg-gray-600 transition-colors">
+								</div>
+								<span
+									class="text-sm font-semibold text-primary group-hover:text-white transition-colors uppercase tracking-wide"
+									>Tech Enthusiast</span
+								>
+							</footer>
+						</blockquote>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -548,6 +765,73 @@ import demoTaskbar from "../assets/DemoTaskbar.webp"
 			</div>
 		</div>
 
+		<!-- FAQ -->
+		<section class="mt-14 space-y-4 max-w-4xl mx-auto">
+			<FaqItem
+				id="included-flyouts"
+				question="What flyouts are included in FluentFlyout?">
+				<p>FluentFlyout includes the following flyouts:</p>
+				<p>
+					• <b>Media Control Flyout</b> (Media info, controls, etc.)<br
+					/>
+					• <b>"Up Next" Flyout</b> (Shows what's playing next)<br />
+					• <b>Lock Keys Flyout</b> (Caps Lock, Num Lock, etc.)<br />
+					• <b>Taskbar Media Widget</b> (Compact media widget directly in
+					the taskbar)
+				</p>
+				<p>
+					You can enable or disable each flyout individually in the
+					app's settings. More flyouts may be added in future updates!
+				</p>
+			</FaqItem>
+
+			<FaqItem
+				id="media-player-compatibility"
+				question="Does FluentFlyout work with all media players?">
+				<p>
+					FluentFlyout works with any media player that supports
+					Windows' System Media Transport Controls (SMTC). This
+					includes most popular players like:
+				</p>
+				<p>
+					• <b>Spotify</b> (full support)<br />
+					• <b>Windows Media Player</b> (full support)<br />
+					• <b>Chromium browsers & Firefox</b> (lacks shuffle/repeat support)<br
+					/>
+					• <b>Apple Music</b> (lacks shuffle/repeat support)<br />
+					• <b>VLC Media Player</b> (may require plugins)<br />
+					• And many more!
+				</p>
+			</FaqItem>
+
+			<FaqItem
+				id="system-resources"
+				question="Does FluentFlyout use a lot of system resources (RAM / processing power)?">
+				<p>
+					FluentFlyout is designed to be lightweight and runs quietly
+					in the background. You should expect around
+					<b>50MB - 200MB</b> of RAM usage in normal scenarios. There should
+					be negligible or <b>basically 0%</b> CPU usage while running in
+					the background on modern computers. We always try our best to
+					optimize as much as possible!
+				</p>
+			</FaqItem>
+
+			<div class="text-center">
+				<div
+					class="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 sm:p-8">
+					<h2 class="text-2xl sm:text-3xl font-bold mb-4">
+						Still have questions?
+					</h2>
+					<a
+						href="/faq"
+						class="inline-flex items-center button-hover-effect border-2 border-white/25 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 hover:bg-gray-50 hover:border-gray-700 hover:scale-105">
+						Go to FAQ
+					</a>
+				</div>
+			</div>
+		</section>
+
 		<!-- contributors -->
 		<section id="contributors" class="my-14 text-center">
 			<h2 class="text-2xl sm:text-3xl font-bold mb-4">
@@ -558,7 +842,14 @@ import demoTaskbar from "../assets/DemoTaskbar.webp"
 				A big thank you to all the amazing people who have contributed
 				to FluentFlyout's development and success!
 			</p>
-			<div class="flex flex-wrap justify-center gap-4">
+			<!-- mobile version -->
+			<div class="flex-wrap justify-center gap-4 flex md:hidden">
+				<img
+					src="https://contrib.rocks/image?repo=unchihugo/fluentflyout&anon=1&columns=6"
+					alt="Contributors"
+				/>
+			</div>
+			<div class="flex-wrap justify-center gap-4 hidden md:flex">
 				<img
 					src="https://contrib.rocks/image?repo=unchihugo/fluentflyout&anon=1"
 					alt="Contributors"
