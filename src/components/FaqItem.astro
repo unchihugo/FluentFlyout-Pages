@@ -1,0 +1,142 @@
+---
+interface Props {
+	question: string;
+	id?: string;
+}
+
+const { question, id } = Astro.props;
+---
+
+<div
+	id={id}
+	class="faq-item bg-gray-800/50 border border-gray-700/50 rounded-xl overflow-hidden transition-all duration-300 hover:border-gray-600/70 scroll-mt-24">
+	<button
+		class="faq-question w-full text-left p-6 flex justify-between items-center gap-4 group cursor-pointer"
+		aria-expanded="false">
+		<h3 class="text-lg sm:text-xl text-gray-100 group-hover:text-primary transition-colors">
+			{question}
+		</h3>
+		<svg
+			class="faq-icon w-6 h-6 text-primary flex-shrink-0 transition-transform duration-300"
+			fill="none"
+			stroke="currentColor"
+			viewBox="0 0 24 24"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M19 9l-7 7-7-7"></path>
+		</svg>
+	</button>
+	<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+		<div class="p-6 pt-0 text-gray-300 prose prose-invert max-w-none">
+			<slot />
+		</div>
+	</div>
+</div>
+
+<script>
+	function openFaqItem(item: Element) {
+		const question = item.querySelector('.faq-question') as HTMLElement;
+		const answer = item.querySelector('.faq-answer') as HTMLElement;
+		const icon = item.querySelector('.faq-icon') as HTMLElement;
+		
+		if (question && answer && icon) {
+			question.setAttribute('aria-expanded', 'true');
+			answer.style.maxHeight = answer.scrollHeight + 'px';
+			icon.style.transform = 'rotate(180deg)';
+		}
+	}
+	
+	function closeFaqItem(item: Element) {
+		const question = item.querySelector('.faq-question') as HTMLElement;
+		const answer = item.querySelector('.faq-answer') as HTMLElement;
+		const icon = item.querySelector('.faq-icon') as HTMLElement;
+		
+		if (question && answer && icon) {
+			question.setAttribute('aria-expanded', 'false');
+			answer.style.maxHeight = '0';
+			icon.style.transform = 'rotate(0deg)';
+		}
+	}
+	
+	document.addEventListener('DOMContentLoaded', () => {
+		const faqItems = document.querySelectorAll('.faq-item');
+		
+		faqItems.forEach(item => {
+			const question = item.querySelector('.faq-question');
+			const answer = item.querySelector('.faq-answer');
+			const icon = item.querySelector('.faq-icon');
+			
+			if (question && answer && icon) {
+				question.addEventListener('click', () => {
+					const isOpen = question.getAttribute('aria-expanded') === 'true';
+					
+					// Close all other FAQ items
+					faqItems.forEach(otherItem => {
+						if (otherItem !== item) {
+							closeFaqItem(otherItem);
+						}
+					});
+					
+					// Toggle current FAQ item
+					if (isOpen) {
+						closeFaqItem(item);
+					} else {
+						openFaqItem(item);
+					}
+				});
+			}
+		});
+		
+		// Check for hash in URL and open corresponding FAQ
+		const hash = window.location.hash;
+		if (hash) {
+			const targetItem = document.querySelector(hash);
+			if (targetItem && targetItem.classList.contains('faq-item')) {
+				setTimeout(() => {
+					openFaqItem(targetItem);
+					targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}, 100);
+			}
+		}
+		
+		// Listen for hash changes
+		window.addEventListener('hashchange', () => {
+			const hash = window.location.hash;
+			if (hash) {
+				const targetItem = document.querySelector(hash);
+				if (targetItem && targetItem.classList.contains('faq-item')) {
+					// Close all items first
+					faqItems.forEach(item => closeFaqItem(item));
+					// Open target item
+					openFaqItem(targetItem);
+					targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			}
+		});
+	});
+</script>
+
+<style>
+	.prose :global(p) {
+		margin-bottom: 1rem;
+	}
+	
+	.prose :global(p:last-child) {
+		margin-bottom: 0;
+	}
+	
+	.prose :global(strong) {
+		color: #fff;
+		font-weight: 600;
+	}
+	
+	.prose :global(code) {
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 0.2rem 0.4rem;
+		border-radius: 0.25rem;
+		font-size: 0.9em;
+	}
+</style>

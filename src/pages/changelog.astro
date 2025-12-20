@@ -1,0 +1,554 @@
+---
+import Layout from "../layouts/Layout.astro"
+import ChangelogItem from "../components/ChangelogItem.astro"
+import fluentFlyoutHero_NoTitle from "../assets/FluentFlyoutHero-NoTitle.webp"
+---
+
+<Layout title="Changelog - FluentFlyout">
+	<!-- Hero Section -->
+	<header
+		class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-b border-gray-600 overflow-hidden pt-24 md:pt-36 pb-16">
+		<div
+			class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-purple-600/5 to-pink-600/5">
+			<img
+				id="hero-image"
+				src={fluentFlyoutHero_NoTitle.src}
+				alt="FluentFlyout Background"
+				class="w-full h-full object-cover opacity-25 duration-700"
+			/>
+		</div>
+
+		<div class="relative z-10 container mx-auto px-4 sm:px-6 text-center">
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+				Changelog
+			</h1>
+			<p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+				The latest updates and changes to FluentFlyout
+			</p>
+		</div>
+	</header>
+
+	<!-- Changelog Content -->
+	<main class="container mx-auto px-4 sm:px-6 py-12">
+		<div class="max-w-4xl mx-auto space-y-8">
+			<!-- Releases Container -->
+			<div id="releases" class="space-y-8" data-releases-per-page="5">
+				<!-- RELEASES_START -->
+				<ChangelogItem
+					version="v2.4"
+					date="2025-12-20"
+					isLatest={true}
+					htmlContent={`<img width="643" height="158" alt="image" src="https://github.com/user-attachments/assets/c1b9b0d8-fdde-4451-8f9c-2bdc30257218" />
+
+<h2>📝 Changelog</h2>
+<h3>Taskbar Widget updates:</h3>
+<ul>
+<li>⏯️ Added a new setting to enable new Taskbar Widget Media Controls buttons</li>
+<li>🎨 Added a new setting to enable new subtle animations when a new song shows up</li>
+<li>The Taskbar Widget will now automatically align next to the native widget if the setting is enabled, enabling support for left-aligned taskbars</li>
+<li>If the artist name is empty, the title text will now be centered</li>
+<li>Improved cover alignment</li>
+<li>Other improvements and optimizations to the widget</li>
+</ul>
+<h3>Other updates:</h3>
+<ul>
+<li>Added debug/error logging to <code>%AppData%\\FluentFlyout\\</code></li>
+<li>🎉 Windows 10 compatibility — FluentFlyout will now fully work on Windows 10, expect less visual issues (updated MicaWPF package version to 6.3.2)</li>
+<li>Updated settings window UI</li>
+<li>Attempted to fix text overlap issues on the Lock Keys flyouts</li>
+<li>Updated translations (thanks to @genotypePL, @maksymser, @ysfemreAlbyrk, @Xshadow9, @CC-D-Y, @weiss-rn, @logounet, @Pigeon0v0, @Aris-Offline, @Ste3798, @Nikolai-Misha, @xsm2 and others on Weblate!)</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/2.3.5...v2.4.0">https://github.com/unchihugo/FluentFlyout/compare/2.3.5...v2.4.0</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@Simnico99, @unchihugo on GitHub</p>`} />
+
+				<ChangelogItem
+					version="v2.3.5"
+					date="2025-12-03"
+					htmlContent={`<h2>📝 Changelog</h2>
+<ul>
+<li>🛠️ <strong>Taskbar Widget position options</strong>: Choose to align the new taskbar widget to the left (default), center or right (next to the tray icon)!</li>
+<li>🚀 <strong>Media Flyout performance updates</strong>: No more lag after rapidly pressing media keys!</li>
+<li>Fixed issue where the &quot;Launch on Startup&quot; setting would always be switched off</li>
+<li>Update translations from Hosted Weblate (thanks to @se34k, @CielWhitefox, @thinkii, @v3vishal, @yoyo435, @ThePerson-o, @fortIItude, @xsm2, @weiss-rn and everyone else on Weblate)</li>
+<li>Refactor licensing for Microsoft Store version</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v2.3.0...2.3.5">https://github.com/unchihugo/FluentFlyout/compare/v2.3.0...2.3.5</a></li>
+</ul>
+<h3>v2.3.6:</h3>
+<ul>
+<li>Fixed Taskbar Widget cover alignment when switching between placeholder and cover in <a href="https://github.com/unchihugo/FluentFlyout/pull/185">https://github.com/unchihugo/FluentFlyout/pull/185</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@unchihugo, @weblate on GitHub</p>`} />
+
+				<ChangelogItem
+					version="v2.3"
+					date="2025-11-28"
+					htmlContent={`<img width="50%" alt="FluentFlyoutDemo9" src="https://github.com/user-attachments/assets/473a5b0a-230f-4230-b3c9-b3ecb5f66caf" />
+
+
+<h2>📝 Changelog</h2>
+<ul>
+<li>⭐ <strong>Media Flyout Taskbar Integration</strong>: A compact, built-in widget that lives right on your Windows Taskbar for instant access to your media, with customization options!</li>
+<li>📥 <strong>Hide Tray Icon option</strong>: you can now choose to hide the Tray Icon completely!</li>
+<li>Fix Media Player Info sometimes displaying Windows Explorer,</li>
+<li>Pressing the start menu entry (or launching FluentFlyout) a second time will now open settings</li>
+<li>Add Premium support for Windows Store (still completely free on GitHub)</li>
+<li>Update translations from Hosted Weblate (thanks to everyone on Weblate),</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v2.2.0...v2.3.0">https://github.com/unchihugo/FluentFlyout/compare/v2.2.0...v2.3.0</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@kitUIN, @unchihugo, @weblate on GitHub</p>`} />
+
+				<ChangelogItem
+					version="v2.2"
+					date="2025-11-22"
+					htmlContent={`<h2>📝 Changelog</h2>
+<ul>
+<li>🎨 The seek bar on the Media Flyout is now properly accent-colored instead of grey on the progressed side!</li>
+<li>💾 Media Flyout now caches the media player name and icon instead of searching on every flyout—you might notice improved performance</li>
+<li>Added 5 new languages (Arabic, Traditional Chinese, Czech, French, German)</li>
+<li>Right-to-left languages will now change every window and flyout&#39;s UI to follow right-to-left design</li>
+<li>Update translations from Hosted Weblate (Thanks to @LOGYT-Eberk, @xsm2, @nath89-52, @tnhung2011, @ebraheemelteyb, @Atalanttore, @bropines, @Nikolai-Misha, @CC-D-Y, @Pigeon0v0 and others on Weblate!)</li>
+<li>Updated READMEs</li>
+<li>Other bug fixes</li>
+<li>By @unchihugo </li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v2.1.0...v2.2.0">https://github.com/unchihugo/FluentFlyout/compare/v2.1.0...v2.2.0</a></li>
+</ul>
+`} />
+
+				<ChangelogItem
+					version="v2.1"
+					date="2025-11-03"
+					htmlContent={`<h2>📝 Changelog</h2>
+<ul>
+<li>📌 <strong>Always Display Widget</strong> — pin the Media Flyout to your desktop at all times with this new toggle, and dismiss it with a new close button!</li>
+<li>✒️ Media Flyout now displays the proper <strong>app icon and name</strong> from the media player (e.g. Spotify will now display the Spotify icon and name instead of &quot;spotifyab&quot;)!</li>
+<li>🎨 Added Acrylic Blur toggles to &quot;Next Up&quot; and Lock Keys flyouts so you can have the new look on all flyouts!</li>
+<li>Added fallback to Chinese and Japanese fonts (MS YaHei and MS JhengHei) to improve appearance and CJK character support </li>
+<li>Fixed flyout mouse hover issue</li>
+<li>Settings will now be shown to new users on first launch</li>
+<li>Update translations from Hosted Weblate (Thanks to @tnhung2011, @Nikolai-Misha, @bropines, @LOGYT-Eberk, @Y-PLONI, @xsm2, @gustavo-bozzano, @ysfemreAlbyrk and others on Weblate!)</li>
+<li>More bug fixes</li>
+<li>By @unchihugo </li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v2.0.0...v2.1.0">https://github.com/unchihugo/FluentFlyout/compare/v2.0.0...v2.1.0</a></li>
+</ul>
+<h2>👏 New Contributors</h2>
+<ul>
+<li>@kitUIN made their first contribution in <a href="https://github.com/unchihugo/FluentFlyout/pull/120">https://github.com/unchihugo/FluentFlyout/pull/120</a></li>
+<li>@Copilot made their first contribution in <a href="https://github.com/unchihugo/FluentFlyout/pull/135">https://github.com/unchihugo/FluentFlyout/pull/135</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@kitUIN on GitHub</p>`} />
+
+				<ChangelogItem
+					version="v2.0"
+					date="2025-10-25"
+					htmlContent={`<h3>🎨 Update 2.0 changes how the Media Flyout looks with two new customization features!</h3>
+<img width="65%" alt="FluentFlyoutDemo7" src="https://github.com/user-attachments/assets/8b29341a-d715-4d12-ad20-0ea18b861935" />
+<img width="65%" alt="FluentFlyoutDemo8" src="https://github.com/user-attachments/assets/abce876f-896a-42e8-97a7-e7e3ce4693fd" />
+
+<h2>📝 Changelog</h2>
+<ul>
+<li>🎊 Media flyout <strong>Acrylic Window</strong> toggle — If you think Mica blur feels outdated, upgrade to a sleek Acrylic blur effect for a more modern and native-like experience!</li>
+<li>🎨 <strong>Blurred Background Styles</strong> — Select from three unique background styles, derived from the cover image, for the media flyout! Pair this with Acrylic Window for a sleek and modern aesthetic.</li>
+<li>Fix flyout appearing on media change bug</li>
+<li>🌐 Added Localization — From now on, the UI language will follow your system if it&#39;s available! Head over to <a href="https://hosted.weblate.org/engage/fluentflyout/">Weblate</a> to help us with translating!</li>
+<li>Update README and CONTRIBUTING.md</li>
+<li>Bug fixes</li>
+<li>By @unchihugo </li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.5.0...v2.0.0">https://github.com/unchihugo/FluentFlyout/compare/v1.5.0...v2.0.0</a></li>
+</ul>
+<h2>👏 New Contributors</h2>
+<ul>
+<li>@weblate made their first contribution in <a href="https://github.com/unchihugo/FluentFlyout/pull/113">https://github.com/unchihugo/FluentFlyout/pull/113</a></li>
+<li>@tnhung2011 made their first contribution in <a href="https://github.com/unchihugo/FluentFlyout/pull/113">https://github.com/unchihugo/FluentFlyout/pull/113</a></li>
+</ul>
+`} />
+
+				<ChangelogItem
+					version="v1.5.0"
+					date="2025-10-11"
+					htmlContent={`<p><strong>This update introduces new QoL features to the Seek Bar and Lock Keys Popups!</strong>
+If the update isn&#39;t out for you yet on the Microsoft Store, you can also update it manually (instructions at the &#39;How to install&#39; section).</p>
+<p>🎊 A bunch of thanks to @nopeless for adding all kinds of new features! I&#39;d also like to thank everyone for 50 thousand installs! ❤️</p>
+<h2>📝 Changelog</h2>
+<ul>
+<li>⏯️ Added new toggleable feature to pause all other media if one is being focused on (by @nopeless in <a href="https://github.com/unchihugo/FluentFlyout/pull/100">https://github.com/unchihugo/FluentFlyout/pull/100</a>)</li>
+<li>📴 Added an option to disable the insert toggle popup only from the lock keys (by @unchihugo in <a href="https://github.com/unchihugo/FluentFlyout/pull/103">https://github.com/unchihugo/FluentFlyout/pull/103</a>)</li>
+<li>🛠️ Changed the behavior of the insert toggle popup to display &quot;Insert Pressed&quot; instead of guessing Insert/Overwrite (by @unchihugo in <a href="https://github.com/unchihugo/FluentFlyout/pull/103">https://github.com/unchihugo/FluentFlyout/pull/103</a>)</li>
+<li>✅ The Seek Bar will now automatically hide itself if the media doesn&#39;t support it (by @nopeless in <a href="https://github.com/unchihugo/FluentFlyout/pull/97">https://github.com/unchihugo/FluentFlyout/pull/97</a>)</li>
+<li>Improved Chinese translation in README.zh.md (by @Hykerisme in <a href="https://github.com/unchihugo/FluentFlyout/pull/72">https://github.com/unchihugo/FluentFlyout/pull/72</a>)</li>
+<li>Added new contributors to all READMEs (by @unchihugo in <a href="https://github.com/unchihugo/FluentFlyout/pull/104">https://github.com/unchihugo/FluentFlyout/pull/104</a>)</li>
+<li>Bug fixes/improvements to the Seek Bar</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.4.1...v1.5.0">https://github.com/unchihugo/FluentFlyout/compare/v1.4.1...v1.5.0</a></li>
+</ul>
+<h2>👏 New Contributors</h2>
+<ul>
+<li>@Hykerisme made their first contribution in <a href="https://github.com/unchihugo/FluentFlyout/pull/72">https://github.com/unchihugo/FluentFlyout/pull/72</a></li>
+<li>@nopeless made their first contribution in <a href="https://github.com/unchihugo/FluentFlyout/pull/97">https://github.com/unchihugo/FluentFlyout/pull/97</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@Hykerisme, @nopeless, @unchihugo on GitHub</p>`} />
+
+				<ChangelogItem
+					version="v1.4.1"
+					date="2025-03-20"
+					htmlContent={`<p>This release comprises of QoL changes and bug fixes. It&#39;s already live on the Microsoft Store!</p>
+<h2>📝 Changelog</h2>
+<ul>
+<li>Updated window hiding logic in MainWindow to allow flyout to come back up mid-hide animation, fixes <a href="https://github.com/unchihugo/FluentFlyout/issues/47">https://github.com/unchihugo/FluentFlyout/issues/47</a></li>
+<li>Added insert key state changed detection for LockWindow to detect insert/overwrite, closes <a href="https://github.com/unchihugo/FluentFlyout/issues/50">https://github.com/unchihugo/FluentFlyout/issues/50</a></li>
+<li>Added small margin for text width in NextUpWindow to prevent ellipsis on some occasions, fixes <a href="https://github.com/unchihugo/FluentFlyout/issues/51">https://github.com/unchihugo/FluentFlyout/issues/51</a></li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.4.0...v1.4.1">https://github.com/unchihugo/FluentFlyout/compare/v1.4.0...v1.4.1</a></li>
+</ul>
+`} />
+
+				<ChangelogItem
+					version="v1.4.0"
+					date="2025-03-02"
+					htmlContent={`<img width="65%" src="https://github.com/user-attachments/assets/9396a4d6-b5b2-48f4-bf44-e587ca2eea9d">
+
+<h2>📝 Changelog</h2>
+<ul>
+<li>⏯️ Added <strong>Media Seekbar</strong>, <strong>Duration</strong>, and toggle button in settings</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.3.4...v1.4.0">https://github.com/unchihugo/FluentFlyout/compare/v1.3.4...v1.4.0</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@AksharDP on GitHub</p>`} />
+
+				<ChangelogItem
+					version="v1.3.4"
+					date="2024-11-24"
+					htmlContent={`<p>This update introduces a new settings management system that replaces Microsoft&#39;s built-in system with a more robust custom system. 
+<strong>This will prevent settings from resetting every update or reinstall</strong>. </p>
+<p>Unfortunately, the settings will reset one last time before converting to the new settings system. After v1.3.4, all settings will migrate to new versions without resetting!</p>
+<h2>📝 Changelog</h2>
+<ul>
+<li>Rewrote Settings Management for Update Compatibility</li>
+<li>Corrected FullscreenDetector logic (Thanks @Yasunaii again for noticing this)</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.3.2...v1.3.4">https://github.com/unchihugo/FluentFlyout/compare/v1.3.2...v1.3.4</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@unchihugo on GitHub</p>`} />
+
+				<ChangelogItem
+					version="v1.3.2"
+					date="2024-11-12"
+					htmlContent={`<h2>📝 Changelog</h2>
+<ul>
+<li>Fixed flyout enabled/disabled conditions</li>
+<li>Fixed DirectX fullscreen detector toggle being reversed</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.3.1...v1.3.2">https://github.com/unchihugo/FluentFlyout/compare/v1.3.1...v1.3.2</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@unchihugo on GitHub</p>`} />
+
+				<ChangelogItem
+					version="v1.3.1"
+					date="2024-11-12"
+					htmlContent={`<h2>📝 Changelog</h2>
+<ul>
+<li>✅ Added setting to <strong>enable/disable main media player flyout</strong> feature by @unchihugo, if you use FluentFlyout for its other flyouts. (Suggested by @havrlisan, u/epicc123)</li>
+<li>👏 <strong>Added manual light/dark mode theme switcher</strong> by @LiAuTraver. (Suggested by @Nex457 and a bunch of others)</li>
+<li>🐛 Added new setting to automatically <strong>turn off FluentFlyout when a DirectX exclusive fullscreen game is running</strong> by @unchihugo, this should fix all edge cases where fullscreen games still minimize after a flyout is activated. (Thanks @Yasunaii and everyone else for helping out!)</li>
+<li>New, minimal tray icon option by @unchihugo, if you&#39;d like an icon that blends in more with the Windows 11 taskbar icons. (Suggested by u/SuccessfulChest4479, u/Muted_Sentence1279)</li>
+<li>Added a SongImagePlaceholder icon by @unchihugo, if there&#39;s no icon available.</li>
+<li>Fixed animation off visual bug by @unchihugo. (Thanks, u/ozumando)</li>
+<li>Added a switch to toggle normal/bold look for the lock flyout by @unchihugo.</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.3.0...v1.3.1">https://github.com/unchihugo/FluentFlyout/compare/v1.3.0...v1.3.1</a></li>
+</ul>
+<h2>🎉 New Contributors</h2>
+<ul>
+<li>@LiAuTraver made their first contribution in <a href="https://github.com/unchihugo/FluentFlyout/pull/22">https://github.com/unchihugo/FluentFlyout/pull/22</a></li>
+</ul>
+`} />
+
+				<ChangelogItem
+					version="v1.3.0"
+					date="2024-11-05"
+					htmlContent={`<img width="65%" src="https://github.com/user-attachments/assets/76c25d0a-4b2a-4443-a15b-d0e62441bf0b">
+
+<h2>📝 Changelog</h2>
+<p>By @unchihugo:</p>
+<ul>
+<li>➡️ <strong>Introducing the Lock Keys flyout</strong>: the flyout displays the status of your selected lock key at a glance, especially handy for keyboards/laptops without a proper lock key indicator! (suggested by @leviathanaxeislit)</li>
+<li>✅ Adjustable easing styles for the flyout animations (suggested by @ottozumkeller)</li>
+<li>Updated UI and text</li>
+<li>👏 <strong>Centered thumbnail image on flyouts properly</strong></li>
+<li>Made Mica effect even more reliable</li>
+<li>Made &quot;Next Up&quot; flyout more reliable, and solved issues making it display more than once at a time</li>
+<li>Introduced more languages (CN and NL) to README.md</li>
+<li>Workaround for startup task not changing (MSIX issue)</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.2.3...v1.3.0">https://github.com/unchihugo/FluentFlyout/compare/v1.2.3...v1.3.0</a></li>
+</ul>
+`} />
+
+				<ChangelogItem
+					version="v1.2.3"
+					date="2024-11-02"
+					htmlContent={`<p>@unchihugo here, I appreciate everyone&#39;s support a lot! I&#39;m still working on more flyouts (capslock, numlock, etc.) and the option to disable volume key triggers, as some of you suggested. Here&#39;s what&#39;s new so far:</p>
+<h2>📝 Changelog</h2>
+<ul>
+<li>🐛 <strong>Improve flyout focus &amp; topmost behavior</strong> to prevent stealing focus in PR <a href="https://github.com/unchihugo/FluentFlyout/pull/7">https://github.com/unchihugo/FluentFlyout/pull/7</a>, fixing cases of bug #5 happening (thanks @Nex457)</li>
+<li>✅ <strong>Added two new settings:</strong><ul>
+<li>Alter tray icon left click behavior: choose between opening settings (default) and showing main flyout, if you would like to use the tray icon as a more integrated flyout button in the taskbar (suggestion by <a href="https://www.reddit.com/user/moccatune/">u/moccatune</a>)</li>
+<li>Choose between left or center title &amp; artist alignment. Definitely try this out, it feels very clean! (suggestion by @AsvnDG)</li>
+</ul>
+</li>
+<li>Updated settings UI and text</li>
+<li>Made Mica effect more reliable</li>
+<li>Other bug fixes</li>
+<li>Codebase related stuff:<ul>
+<li>Added comments in a lot of areas</li>
+<li>Created WindowHelper.cs class to have things a bit more organized</li>
+</ul>
+</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.2.2...v1.2.3">https://github.com/unchihugo/FluentFlyout/compare/v1.2.2...v1.2.3</a></li>
+<li><em>tested on Windows 11, common use cases</em></li>
+</ul>
+<p>📦 If you&#39;ve installed the <a href="https://apps.microsoft.com/detail/9n45nsm4tnbp">Microsoft Store</a> version, you can update FluentFlyout using the .msixbundle installer as they&#39;re interchangeably compatible. It might take a few more days for the update to appear on MS Store.<br>➡️ <a href="https://github.com/unchihugo/FluentFlyout?tab=readme-ov-file#using-msixbundle-installer">.msixbundle tutorial</a></p>
+<p>Please try out these new features and let me know if you encounter any issues! 💖</p>
+`} />
+
+				<ChangelogItem
+					version="v1.2.2"
+					date="2024-10-31"
+					htmlContent={`<img width="60%" alt="FluentFlyoutDemo4" src="https://github.com/user-attachments/assets/e866ef04-4bd9-44b5-894d-f62536676542">
+
+<h3>Changelog</h3>
+<ul>
+<li>Added &quot;Up Next&quot; flyout (experimental) that displays what&#39;s playing next after each song/video</li>
+<li>Added images to each section in settings, making it easier to identify which flyout it belongs to</li>
+<li>Made input boxes smoother and added validation</li>
+<li>Added option to disable media player info</li>
+<li>Updated settings and flyout UI and settings text</li>
+<li>Other bug fixes</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.1.0...v1.2.2">https://github.com/unchihugo/FluentFlyout/compare/v1.1.0...v1.2.2</a></li>
+</ul>
+`} />
+
+				<ChangelogItem
+					version="v1.1.0"
+					date="2024-10-27"
+					htmlContent={`<h1>Public Release Version</h1>
+<p>Gradually rolling out to Microsoft Store</p>
+<h2>Changelog</h2>
+<ul>
+<li>Added Repeat One and Repeat All</li>
+<li>Added Shuffle</li>
+<li>Made flyout animation speed adjustable</li>
+<li>Improved settings UI and added scroll</li>
+<li>Improved Windows 10 compatibility</li>
+<li>Improved code maintainability</li>
+<li>Fixed bug where multiple Settings windows could be opened</li>
+<li>Fixed play/pause visual bug</li>
+<li>Other bug fixes</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.0.5-alpha...v1.1.0">https://github.com/unchihugo/FluentFlyout/compare/v1.0.5-alpha...v1.1.0</a></li>
+</ul>
+`} />
+
+				<ChangelogItem
+					version="v1.0.5-alpha"
+					date="2024-10-23"
+					htmlContent={`<h1>Closed Alpha Release 3</h1>
+<p>Ironing out/final stages of the project to get it ready to be submitted for certification to Microsoft Store and public launch</p>
+<h2>Changelog</h2>
+<ul>
+<li>Removed WinForms dependencies, resulting in a package size decrease (~30MB space saved) to ~170MB, once ready</li>
+<li>Improved Tray UI and functionality</li>
+<li>Updated flyout and settings UI</li>
+<li>Fully implemented Light mode</li>
+<li>Added flyout duration setting</li>
+<li>Added more flyout positions (top left, top center, top right)</li>
+<li>Fixed launch on startup option</li>
+<li>Bug fixes</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.0.2-alpha...v1.0.5-alpha">https://github.com/unchihugo/FluentFlyout/compare/v1.0.2-alpha...v1.0.5-alpha</a></li>
+</ul>
+`} />
+
+				<ChangelogItem
+					version="v1.0.2-alpha"
+					date="2024-10-21"
+					htmlContent={`<p><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v1.0.0-alpha...v1.0.2-alpha">https://github.com/unchihugo/FluentFlyout/compare/v1.0.0-alpha...v1.0.2-alpha</a></p>
+`} />
+
+				<ChangelogItem
+					version="v1.0.0-alpha"
+					date="2024-10-19"
+					htmlContent={`<p>No description provided.</p>
+`} />
+				<!-- RELEASES_END -->
+			</div>
+
+			<!-- Pagination Controls -->
+			<div
+				id="pagination"
+				class="flex items-center justify-center gap-2 pt-8">
+				<button
+					id="prev-page"
+					class="px-4 py-2 rounded-lg border-2 border-white/25 text-white font-semibold transition duration-300 hover:bg-gray-700 hover:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-white/25">
+					Previous
+				</button>
+				<div id="page-numbers" class="flex gap-2"></div>
+				<button
+					id="next-page"
+					class="px-4 py-2 rounded-lg border-2 border-white/25 text-white font-semibold transition duration-300 hover:bg-gray-700 hover:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-white/25">
+					Next
+				</button>
+			</div>
+
+			<!-- View All Releases -->
+			<div class="text-center pt-8">
+				<a
+					href="https://github.com/unchihugo/FluentFlyout/releases"
+					target="_blank"
+					class="inline-flex items-center button-hover-effect border-2 border-white/25 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 hover:bg-gray-50 hover:border-gray-700 hover:scale-105">
+					<svg
+						class="w-5 h-5 mr-2"
+						fill="currentColor"
+						viewBox="0 0 16 16">
+						<path
+							d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+						></path>
+					</svg>
+					View All Releases on GitHub
+				</a>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<script>
+	// Pagination functionality
+	const releasesContainer = document.getElementById("releases")
+	const prevButton = document.getElementById("prev-page")
+	const nextButton = document.getElementById("next-page")
+	const pageNumbersContainer = document.getElementById("page-numbers")
+
+	if (releasesContainer && prevButton && nextButton && pageNumbersContainer) {
+		const releasesPerPage = parseInt(
+			releasesContainer.dataset.releasesPerPage || "5"
+		)
+		const releases = Array.from(
+			releasesContainer.querySelectorAll("article.changelog-item")
+		)
+		const totalPages = Math.ceil(releases.length / releasesPerPage)
+		let currentPage = 1
+
+		function showPage(page: number, updateUrl = true) {
+			currentPage = Math.max(1, Math.min(page, totalPages))
+
+			// Hide all releases
+			releases.forEach((release, index) => {
+				const startIndex = (currentPage - 1) * releasesPerPage
+				const endIndex = startIndex + releasesPerPage
+
+				if (index >= startIndex && index < endIndex) {
+					;(release as HTMLElement).style.display = "block"
+				} else {
+					;(release as HTMLElement).style.display = "none"
+				}
+			})
+
+			// Update button states
+			prevButton.disabled = currentPage === 1
+			nextButton.disabled = currentPage === totalPages
+
+			// Update page numbers
+			renderPageNumbers()
+
+			// Update URL
+			if (updateUrl) {
+				const url = new URL(window.location.href)
+				if (currentPage === 1) {
+					url.searchParams.delete('page')
+				} else {
+					url.searchParams.set('page', currentPage.toString())
+				}
+				window.history.pushState({}, '', url)
+			}
+		}
+
+		function renderPageNumbers() {
+			pageNumbersContainer.innerHTML = ""
+
+			const maxVisiblePages = 5
+			let startPage = Math.max(
+				1,
+				currentPage - Math.floor(maxVisiblePages / 2)
+			)
+			let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1)
+
+			// Adjust start if we're near the end
+			if (endPage - startPage < maxVisiblePages - 1) {
+				startPage = Math.max(1, endPage - maxVisiblePages + 1)
+			}
+
+			// First page button
+			if (startPage > 1) {
+				const firstButton = createPageButton(1, false)
+				pageNumbersContainer.appendChild(firstButton)
+
+				if (startPage > 2) {
+					const ellipsis = document.createElement("span")
+					ellipsis.textContent = "..."
+					ellipsis.className = "px-2 py-2 text-gray-400"
+					pageNumbersContainer.appendChild(ellipsis)
+				}
+			}
+
+			// Page number buttons
+			for (let i = startPage; i <= endPage; i++) {
+				const button = createPageButton(i, i === currentPage)
+				pageNumbersContainer.appendChild(button)
+			}
+
+			// Last page button
+			if (endPage < totalPages) {
+				if (endPage < totalPages - 1) {
+					const ellipsis = document.createElement("span")
+					ellipsis.textContent = "..."
+					ellipsis.className = "px-2 py-2 text-gray-400"
+					pageNumbersContainer.appendChild(ellipsis)
+				}
+
+				const lastButton = createPageButton(totalPages, false)
+				pageNumbersContainer.appendChild(lastButton)
+			}
+		}
+
+		function createPageButton(pageNum: number, isActive: boolean) {
+			const button = document.createElement("button")
+			button.textContent = pageNum.toString()
+			button.className = isActive
+				? "px-4 py-2 rounded-lg bg-primary text-white font-semibold"
+				: "px-4 py-2 rounded-lg border-2 border-white/25 text-white font-semibold transition duration-300 hover:bg-gray-700 hover:border-gray-600"
+			button.addEventListener("click", () => showPage(pageNum))
+			return button
+		}
+
+		prevButton.addEventListener("click", () => showPage(currentPage - 1))
+		nextButton.addEventListener("click", () => showPage(currentPage + 1))
+
+		// Initialize from URL or default to page 1
+		const urlParams = new URLSearchParams(window.location.search)
+		const initialPage = parseInt(urlParams.get('page') || '1')
+		showPage(initialPage, false)
+
+		// Handle browser back/forward
+		window.addEventListener('popstate', () => {
+			const urlParams = new URLSearchParams(window.location.search)
+			const page = parseInt(urlParams.get('page') || '1')
+			showPage(page, false)
+		})
+	}
+</script>

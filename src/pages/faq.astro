@@ -1,0 +1,303 @@
+---
+import Layout from "../layouts/Layout.astro"
+import FaqItem from "../components/FaqItem.astro"
+import fluentFlyoutHero_NoTitle from "../assets/FluentFlyoutHero-NoTitle.webp"
+---
+
+<Layout title="FAQ - FluentFlyout">
+	<!-- Hero Section -->
+	<header
+		class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-b border-gray-600 overflow-hidden pt-24 md:pt-36 pb-16">
+		<div
+			class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-purple-600/5 to-pink-600/5">
+			<img
+				id="hero-image"
+				src={fluentFlyoutHero_NoTitle.src}
+				alt="FluentFlyout Background"
+				class="w-full h-full object-cover opacity-25 duration-700"
+			/>
+		</div>
+
+		<div class="relative z-10 container mx-auto px-4 sm:px-6 text-center">
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+				Frequently Asked Questions
+			</h1>
+			<p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+				Find answers to common questions about FluentFlyout
+			</p>
+		</div>
+	</header>
+
+	<!-- FAQ Content -->
+	<main class="container mx-auto px-4 sm:px-6 py-12">
+		<div class="max-w-4xl mx-auto space-y-4">
+			<!-- Technical Issues -->
+			<div class="mb-12">
+				<h2
+					class="text-2xl sm:text-3xl font-semibold mb-6 text-primary">
+					Technical Issues
+				</h2>
+				<div class="space-y-4">
+					<FaqItem
+						id="missing-song-info"
+						question="The media flyout is missing information about the song I'm listening to">
+						<p>
+							This is a limitation of the media player you're
+							using, not FluentFlyout. We use the media API
+							provided by Windows (SMTC). If the developers of
+							your media player haven't implemented this system,
+							FluentFlyout cannot see the data.
+						</p>
+						<p>
+							<strong>Note:</strong> the native Windows 10/11 media
+							flyout also wouldn't be able to see the song info.
+						</p>
+						<p class="italic">
+							(In basic terms: imagine a class of students
+							submitting homework to a teacher. FluentFlyout is
+							the teacher, and the media players are the students.
+							If a student (the media player) doesn't hand in
+							their homework, the teacher (FluentFlyout) cannot
+							read it, even if the work was actually done.)
+						</p>
+					</FaqItem>
+
+					<FaqItem
+						id="bluetooth-trackpad"
+						question="Trackpad & Bluetooth volume control isn't recognized by FluentFlyout">
+						<p>
+							This is a Windows limitation. Currently, there is no
+							Windows API that allows third-party apps to detect
+							when a Bluetooth device or a trackpad has changed
+							the volume.
+						</p>
+						<p>
+							<strong>Note:</strong> the native Windows 10/11 volume
+							flyout also wouldn't be able to detect volume changes
+							from Bluetooth.
+						</p>
+					</FaqItem>
+
+					<FaqItem
+						id="taskbar-widget-issues"
+						question="The Taskbar Widget doesn't show up / doesn't work / crashes">
+						<p>
+							Make sure you don't have any other programs
+							interfering or changing how the Windows 11 Taskbar
+							functions: the Taskbar Widget injects itself
+							directly into the <b>native Windows Taskbar</b>, so
+							any tool that heavily modifies the taskbar code
+							could break this injection.
+						</p>
+						<p>
+							There have been reports of it working with
+							customized WindHawk taskbars, as these are often
+							just visual modifications (not deep code changes).
+						</p>
+					</FaqItem>
+
+					<FaqItem
+						id="media-flyout-not-appearing"
+						question="The Media Flyout doesn't appear when I change the volume">
+						<p>
+							Ensure FluentFlyout is running (check your system
+							tray) and that there's currently media playing. The
+							media flyout only appears when media is detected.
+						</p>
+					</FaqItem>
+				</div>
+			</div>
+
+			<!-- Features & Functionality -->
+			<div class="mb-12">
+				<h2
+					class="text-2xl sm:text-3xl font-semibold mb-6 text-primary">
+					Features & Functionality
+				</h2>
+				<div class="space-y-4">
+					<FaqItem
+						id="customize-appearance"
+						question="Can I customize the appearance of FluentFlyout?">
+						<p>
+							Yes! FluentFlyout is deeply customizable. You can
+							change:
+						</p>
+						<p>
+							• Layout styles and positions<br />
+							• Themes (Light/Dark mode)<br />
+							• Backdrop effects (Mica or Acrylic)<br />
+							• Background blurs<br />
+							• Animation speeds and behaviors
+						</p>
+						<p>
+							All customization options are available in the app's
+							settings, accessible by right-clicking the tray icon
+							or opening the app from the Start Menu.
+						</p>
+					</FaqItem>
+
+					<FaqItem
+						id="included-flyouts"
+						question="What flyouts are included in FluentFlyout?">
+						<p>FluentFlyout includes the following flyouts:</p>
+						<p>
+							• <b>Media Control Flyout</b> (Media info, controls, etc.)<br
+							/>
+							• <b>"Up Next" Flyout</b> (Shows what's playing next)<br
+							/>
+							• <b>Lock Keys Flyout</b> (Caps Lock, Num Lock, etc.)<br
+							/>
+							• <b>Taskbar Media Widget</b> (Compact media widget directly
+							in the taskbar)
+						</p>
+						<p>
+							You can enable or disable each flyout individually
+							in the app's settings. More flyouts may be added in
+							future updates!
+						</p>
+					</FaqItem>
+
+					<FaqItem
+						id="media-player-compatibility"
+						question="Does FluentFlyout work with all media players?">
+						<p>
+							FluentFlyout works with any media player that
+							supports Windows' System Media Transport Controls
+							(SMTC). This includes most popular players like:
+						</p>
+						<p>
+							• <b>Spotify</b> (full support)<br />
+							• <b>Windows Media Player</b> (full support)<br />
+							• <b>Chromium browsers & Firefox</b> (lacks shuffle/repeat
+							support)<br />
+							• <b>Apple Music</b> (lacks shuffle/repeat support)<br
+							/>
+							• <b>VLC Media Player</b> (may require plugins)<br
+							/>
+							• And many more!
+						</p>
+					</FaqItem>
+
+					<FaqItem
+						id="store-vs-github"
+						question="What's the difference between the Microsoft Store and GitHub versions?">
+						<p>
+							Both versions share the same core functionality. The
+							only differences are:
+						</p>
+						<p>
+							<strong>Microsoft Store:</strong> Provides automatic updates,
+							easier installation, optional one-time purchase to unlock
+							a few extra features.
+						</p>
+						<p>
+							<strong>GitHub:</strong> Completely free and open-source,
+							manual updates required, and all features are unlocked.
+						</p>
+						<p>
+							Read more about the project's model in the
+							<a
+								href="https://github.com/unchihugo/FluentFlyout?tab=readme-ov-file#sustainability--the-microsoft-store-"
+								target="_blank"
+								class="text-blue-400 underline"
+								>Sustainability section on GitHub</a
+							>.
+						</p>
+					</FaqItem>
+				</div>
+			</div>
+
+			<!-- General Questions -->
+			<div class="mb-12">
+				<h2
+					class="text-2xl sm:text-3xl font-semibold mb-6 text-primary">
+					General Questions
+				</h2>
+				<div class="space-y-4">
+					<FaqItem
+						id="is-free"
+						question="Is FluentFlyout really free?">
+						<p>
+							Yes! FluentFlyout is completely free and open source
+							under the GNU v3 license. The Microsoft Store
+							version offers an optional one-time purchase to
+							support development, but all features are available
+							for free via GitHub.
+						</p>
+					</FaqItem>
+
+					<FaqItem
+						id="contribute"
+						question="How can I translate or contribute to FluentFlyout?">
+						<p>We welcome contributions! You can help by:</p>
+						<p>
+							• Contributing code on <a
+								href="https://github.com/unchihugo/FluentFlyout"
+								target="_blank"
+								class="text-blue-400 underline">GitHub</a
+							><br />
+							• Translating the app on <a
+								href="https://hosted.weblate.org/projects/fluentflyout/"
+								target="_blank"
+								class="text-blue-400 underline">Weblate</a
+							><br />
+							• Reporting bugs and suggesting features<br />
+							• Sharing FluentFlyout with others<br />
+							• Supporting development through the Microsoft Store
+						</p>
+						<p>
+							Read more about contributing in the
+							<a
+								href="https://github.com/unchihugo/FluentFlyout?tab=contributing-ov-file"
+								target="_blank"
+								class="text-blue-400 underline"
+								>Contributing Guide on GitHub</a
+							>.
+						</p>
+					</FaqItem>
+
+					<FaqItem
+						id="system-resources"
+						question="Does FluentFlyout use a lot of system resources (RAM / processing power)?">
+						<p>
+							FluentFlyout is designed to be lightweight and runs
+							quietly in the background. You should expect around
+							<b>50MB - 200MB</b> of RAM usage in normal scenarios.
+							There should be negligible or <b>basically 0%</b> CPU
+							usage while running in the background on modern computers.
+							We always try our best to optimize as much as possible!
+						</p>
+					</FaqItem>
+				</div>
+			</div>
+
+			<!-- Still Have Questions? -->
+			<div class="mt-16 text-center">
+				<div
+					class="bg-gray-800/50 border border-gray-700/50 rounded-xl p-8 sm:p-12">
+					<h2 class="text-2xl sm:text-3xl font-bold mb-4">
+						Still have questions?
+					</h2>
+					<p class="text-gray-300 mb-6 text-lg">
+						Can't find what you're looking for? Reach out to us on
+						GitHub!
+					</p>
+					<a
+						href="https://github.com/unchihugo/FluentFlyout/issues"
+						target="_blank"
+						class="inline-flex items-center button-hover-effect border-2 border-white/25 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 hover:bg-gray-50 hover:border-gray-700 hover:scale-105">
+						<svg
+							class="w-5 h-5 mr-2"
+							fill="currentColor"
+							viewBox="0 0 16 16">
+							<path
+								d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+							></path>
+						</svg>
+						Ask on GitHub
+					</a>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>

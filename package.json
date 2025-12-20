@@ -6,9 +6,13 @@
     "dev": "astro dev & .\\tailwindcss.exe -i .\\src\\styles\\input.css -o .\\src\\styles\\output.css -w",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate:changelog": "node scripts/generate-changelog.js"
   },
   "dependencies": {
     "astro": "^5.16.6"
+  },
+  "devDependencies": {
+    "marked": "^17.0.1"
   }
 }

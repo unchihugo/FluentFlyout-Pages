@@ -51,10 +51,18 @@ jobs:
             fs.writeFileSync('changelog.md', mdContent);
             console.log("changelog.md generated successfully.");
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate changelog page
+        run: npm run generate:changelog
+
       - name: Commit and Push Changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add changelog.md
+          git add changelog.md src/pages/changelog.astro
           # Only commit if there are changes
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update changelog from App Release" && git push)

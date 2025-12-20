@@ -56,6 +56,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const navDownload = document.getElementById('nav-download');
 
     function updateNavVisibility() {
+        // if the page isn't index, always show nav elements
+        console.log(window.location.pathname);
+        if (window.location.pathname !== '/') {
+            if (navLogo) {
+                navLogo.classList.remove('opacity-0', 'pointer-events-none', 'transition-opacity', 'duration-300');
+            }
+            if (navDownload) {
+                navDownload.classList.remove('opacity-0', 'pointer-events-none', 'transition-opacity', 'duration-300');
+            }
+            return;
+        }
+
         if (navLogo && navDownload) {
             if (window.scrollY > window.innerHeight / 2) {
                 navLogo.classList.remove('opacity-0', 'pointer-events-none');
