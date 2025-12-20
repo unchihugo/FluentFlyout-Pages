@@ -1,0 +1,60 @@
+name: Update Changelog
+
+on:
+  repository_dispatch:
+    types: [app-release-published]
+  
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  build-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Website Code
+        uses: actions/checkout@v4
+
+      - name: Fetch Releases and Generate Markdown
+        uses: actions/github-script@v7
+        env:
+          APP_REPO: unchihugo/FluentFlyout
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            
+            const [owner, repo] = process.env.APP_REPO.split('/');
+            const { data: releases } = await github.rest.repos.listReleases({
+              owner,
+              repo,
+              per_page: 100
+            });
+
+            let mdContent = "";
+            
+            // Loop through releases (GitHub returns them newest first)
+            for (const release of releases) {
+              if (release.draft) continue; // Skip drafts
+
+              const date = new Date(release.published_at).toISOString().split('T')[0];
+              const title = release.name || release.tag_name;
+              const body = release.body || "No description provided.";
+
+              mdContent += `#NEWRELEASE\n`;
+              mdContent += `#TITLE ${title}\n`;
+              mdContent += `#DATE ${date}\n`;
+              mdContent += `#BODY ${body}\n`;
+            }
+
+            fs.writeFileSync('changelog.md', mdContent);
+            console.log("changelog.md generated successfully.");
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add changelog.md
+          # Only commit if there are changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update changelog from App Release" && git push)
