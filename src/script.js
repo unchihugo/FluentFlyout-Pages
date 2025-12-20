@@ -70,6 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateNavVisibility);
     updateNavVisibility(); // Initial check
 
+    // Hero footer scroll button
+    const heroFooterBtn = document.getElementById('hero-footer');
+    if (heroFooterBtn) {
+        heroFooterBtn.addEventListener('click', () => {
+            const featuresSection = document.getElementById('features');
+            if (featuresSection) {
+                featuresSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
+
     // Winget button handler
     const wingetBtn = document.getElementById('winget-btn');
     const wingetContainer = document.getElementById('winget-container');
