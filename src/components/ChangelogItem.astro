@@ -1,12 +1,13 @@
 ---
 interface Props {
 	version: string
+	title: string
 	date: string
 	isLatest?: boolean
 	htmlContent?: string
 }
 
-const { version, date, isLatest = false, htmlContent } = Astro.props
+const { version, title, date, isLatest = false, htmlContent } = Astro.props
 
 // Format the date
 const formatDate = (dateString: string) => {
@@ -17,26 +18,50 @@ const formatDate = (dateString: string) => {
 		day: "numeric",
 	})
 }
+
+// If two numbers or ends with 0, return "Major"
+const updateType = (version: string) => {
+	const parts = version.split(".").map(Number)
+	if (parts.length <= 2) return "Major"
+	if (parts[2] === 0) return "Major"
+	return "Minor"
+}
+
+const updateString = updateType(version)
 ---
 
 <article
 	class="changelog-item bg-gray-800/50 border border-gray-700/50 rounded-lg p-6 sm:px-8 transition-all duration-300 hover:border-gray-600/70 relative overflow-hidden">
 	{
 		isLatest && (
-			<div class="bg-primary text-green-300 text-sm rounded-full inline-block bg-green-500/25 px-2 mb-2 border border-green-400/50">
-				Latest Update
+			<div class="bg-primary text-green-300 text-sm rounded-full inline-block bg-green-500/25 px-2.5 py-0.5 mb-2 border border-green-400/50 mr-0.5">
+				Latest Release
 			</div>
 		)
 	}
 
+	{
+		updateString === "Major" ? (
+			<div class="bg-primary text-blue-300 text-sm rounded-full inline-block bg-blue-500/25 px-2.5 py-0.5 mb-2 border border-blue-400/50 mr-0.5">
+				Major Update
+			</div>
+		) : (
+			<div class="bg-primary text-gray-300 text-sm rounded-full inline-block bg-gray-500/25 px-2.5 py-0.5 mb-2 border border-gray-400/50 mr-0.5">
+				Minor Update
+			</div>
+		)
+		
+	}
+
+	<time class="text-sm text-gray-400 px-1" datetime={date}>
+		{formatDate(date)}
+	</time>
+
 	<header class="mb-4 border-b border-gray-700/70 pb-4">
 		<div class="flex flex-wrap items-baseline gap-3 mb-2">
 			<h3 class="text-3xl font-semibold text-white">
-				Update {version}
+				Update {version} <p class="inline font-normal">- {title}</p>
 			</h3>
-			<time class="text-sm sm:text-base text-gray-400" datetime={date}>
-				{formatDate(date)}
-			</time>
 		</div>
 	</header>
 
