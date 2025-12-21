@@ -18,7 +18,8 @@ function parseChangelog(content) {
     if (titleMatch && dateMatch && bodyMatch) {
       releases.push({
         version: titleMatch[1].trim().split(' ')[0], // Extract version (e.g., "v2.4")
-        title: titleMatch[1].trim(),
+        title: titleMatch[1].trim() // remove version and - or —
+          .replace(/^v?\d+\.\d+(\.\d+)?\s*[-—]\s*/, ''),
         date: dateMatch[1].trim(),
         body: bodyMatch[1].trim()
       });
@@ -102,6 +103,7 @@ function generateAstroContent(releases) {
 
     content += `\t\t\t\t<ChangelogItem
 \t\t\t\t\tversion="${escapeHtml(release.version)}"
+\t\t\t\t\ttitle="${escapeHtml(release.title)}"
 \t\t\t\t\tdate="${release.date}"${isLatest ? '\n\t\t\t\t\tisLatest={true}' : ''}
 \t\t\t\t\thtmlContent={\`${htmlContent}\`} />\n\n`;
   });

@@ -3,7 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev & .\\tailwindcss.exe -i .\\src\\styles\\input.css -o .\\src\\styles\\output.css -w",
+    "dev:astro": "astro dev",
+    "dev:tailwind": ".\\tailwindcss.exe -i .\\src\\styles\\input.css -o .\\src\\styles\\output.css -w",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

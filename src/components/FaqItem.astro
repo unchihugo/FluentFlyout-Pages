@@ -1,19 +1,20 @@
 ---
 interface Props {
-	question: string;
-	id?: string;
+	question: string
+	id?: string
 }
 
-const { question, id } = Astro.props;
+const { question, id } = Astro.props
 ---
 
 <div
 	id={id}
-	class="faq-item bg-gray-800/50 border border-gray-700/50 rounded-xl overflow-hidden transition-all duration-300 hover:border-gray-600/70 scroll-mt-24">
+	class="faq-item bg-gray-800/50 border border-gray-700/50 rounded-lg overflow-hidden transition-all duration-300 hover:border-gray-600/70 scroll-mt-24">
 	<button
 		class="faq-question w-full text-left p-6 flex justify-between items-center gap-4 group cursor-pointer"
 		aria-expanded="false">
-		<h3 class="text-lg sm:text-xl text-gray-100 group-hover:text-primary transition-colors">
+		<h3
+			class="text-lg sm:text-xl text-gray-100 group-hover:text-primary transition-colors">
 			{question}
 		</h3>
 		<svg
@@ -30,109 +31,137 @@ const { question, id } = Astro.props;
 		</svg>
 	</button>
 	<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
-		<div class="p-6 pt-0 text-gray-300 prose prose-invert max-w-none">
+		<div
+			class="py-6 pb-3 mx-6 text-gray-300 prose prose-invert max-w-none border-t border-gray-700/50">
 			<slot />
+			<!-- link to question button -->
+			<div class="text-right">
+				<a
+					href={id ? `#${id}` : "#"}
+					class="text-gray-400 hover:text-primary transition inline-block"
+					aria-label="Link to this question">
+					<svg
+						class="w-5 h-5"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</svg>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
 
 <script>
 	function openFaqItem(item: Element) {
-		const question = item.querySelector('.faq-question') as HTMLElement;
-		const answer = item.querySelector('.faq-answer') as HTMLElement;
-		const icon = item.querySelector('.faq-icon') as HTMLElement;
-		
+		const question = item.querySelector(".faq-question") as HTMLElement
+		const answer = item.querySelector(".faq-answer") as HTMLElement
+		const icon = item.querySelector(".faq-icon") as HTMLElement
+
 		if (question && answer && icon) {
-			question.setAttribute('aria-expanded', 'true');
-			answer.style.maxHeight = answer.scrollHeight + 'px';
-			icon.style.transform = 'rotate(180deg)';
+			question.setAttribute("aria-expanded", "true")
+			answer.style.maxHeight = answer.scrollHeight + "px"
+			icon.style.transform = "rotate(180deg)"
 		}
 	}
-	
+
 	function closeFaqItem(item: Element) {
-		const question = item.querySelector('.faq-question') as HTMLElement;
-		const answer = item.querySelector('.faq-answer') as HTMLElement;
-		const icon = item.querySelector('.faq-icon') as HTMLElement;
-		
+		const question = item.querySelector(".faq-question") as HTMLElement
+		const answer = item.querySelector(".faq-answer") as HTMLElement
+		const icon = item.querySelector(".faq-icon") as HTMLElement
+
 		if (question && answer && icon) {
-			question.setAttribute('aria-expanded', 'false');
-			answer.style.maxHeight = '0';
-			icon.style.transform = 'rotate(0deg)';
+			question.setAttribute("aria-expanded", "false")
+			answer.style.maxHeight = "0"
+			icon.style.transform = "rotate(0deg)"
 		}
 	}
-	
-	document.addEventListener('DOMContentLoaded', () => {
-		const faqItems = document.querySelectorAll('.faq-item');
-		
-		faqItems.forEach(item => {
-			const question = item.querySelector('.faq-question');
-			const answer = item.querySelector('.faq-answer');
-			const icon = item.querySelector('.faq-icon');
-			
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const faqItems = document.querySelectorAll(".faq-item")
+
+		faqItems.forEach((item) => {
+			const question = item.querySelector(".faq-question")
+			const answer = item.querySelector(".faq-answer")
+			const icon = item.querySelector(".faq-icon")
+
 			if (question && answer && icon) {
-				question.addEventListener('click', () => {
-					const isOpen = question.getAttribute('aria-expanded') === 'true';
-					
+				question.addEventListener("click", () => {
+					const isOpen =
+						question.getAttribute("aria-expanded") === "true"
+
 					// Close all other FAQ items
-					faqItems.forEach(otherItem => {
+					faqItems.forEach((otherItem) => {
 						if (otherItem !== item) {
-							closeFaqItem(otherItem);
+							closeFaqItem(otherItem)
 						}
-					});
-					
+					})
+
 					// Toggle current FAQ item
 					if (isOpen) {
-						closeFaqItem(item);
+						closeFaqItem(item)
 					} else {
-						openFaqItem(item);
+						openFaqItem(item)
 					}
-				});
+				})
 			}
-		});
-		
+		})
+
 		// Check for hash in URL and open corresponding FAQ
-		const hash = window.location.hash;
+		const hash = window.location.hash
 		if (hash) {
-			const targetItem = document.querySelector(hash);
-			if (targetItem && targetItem.classList.contains('faq-item')) {
+			const targetItem = document.querySelector(hash)
+			if (targetItem && targetItem.classList.contains("faq-item")) {
 				setTimeout(() => {
-					openFaqItem(targetItem);
-					targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-				}, 100);
+					openFaqItem(targetItem)
+					targetItem.scrollIntoView({
+						behavior: "smooth",
+						block: "center",
+					})
+				}, 100)
 			}
 		}
-		
+
 		// Listen for hash changes
-		window.addEventListener('hashchange', () => {
-			const hash = window.location.hash;
+		window.addEventListener("hashchange", () => {
+			const hash = window.location.hash
 			if (hash) {
-				const targetItem = document.querySelector(hash);
-				if (targetItem && targetItem.classList.contains('faq-item')) {
+				const targetItem = document.querySelector(hash)
+				if (targetItem && targetItem.classList.contains("faq-item")) {
 					// Close all items first
-					faqItems.forEach(item => closeFaqItem(item));
+					faqItems.forEach((item) => closeFaqItem(item))
 					// Open target item
-					openFaqItem(targetItem);
-					targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+					openFaqItem(targetItem)
+					targetItem.scrollIntoView({
+						behavior: "smooth",
+						block: "center",
+					})
 				}
 			}
-		});
-	});
+		})
+	})
 </script>
 
 <style>
 	.prose :global(p) {
 		margin-bottom: 1rem;
 	}
-	
+
 	.prose :global(p:last-child) {
 		margin-bottom: 0;
 	}
-	
+
 	.prose :global(strong) {
 		color: #fff;
 		font-weight: 600;
 	}
-	
+
 	.prose :global(code) {
 		background-color: rgba(255, 255, 255, 0.1);
 		padding: 0.2rem 0.4rem;
