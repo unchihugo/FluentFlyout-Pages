@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro"
 import fluentFlyoutHero_NoTitle from "../assets/FluentFlyoutHero-NoTitle.webp"
 import fluentFlyoutTitle from "../assets/FluentFlyoutTitle.webp"
 import demo3Alt from "../assets/Demo3-alt.webp"
-import demoTaskbar from "../assets/DemoTaskbar.webp"
+import demoTaskbar from "../assets/DemoTaskbar-large.webm"
 import FaqItem from "../components/FaqItem.astro"
 ---
 
@@ -250,10 +250,12 @@ import FaqItem from "../components/FaqItem.astro"
 			<div
 				class="grid lg:grid-cols-2 lg:gap-8 items-center mb-16 sm:mb-24 reveal-on-scroll">
 				<div class="flex justify-center lg:order-2">
-					<img
-						src={demoTaskbar.src}
-						alt="Taskbar Widget gif"
+					<video
+						src={demoTaskbar}
 						class="rounded-lg transform transition-transform duration-300 w-full border border-gray-500/50"
+						autoplay
+						loop
+						muted
 					/>
 				</div>
 				<div class="lg:order-1 text-center lg:text-left">

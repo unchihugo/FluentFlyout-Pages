@@ -60,7 +60,7 @@ const updateString = updateType(version)
 	<header class="mb-4 border-b border-gray-700/70 pb-4">
 		<div class="flex flex-wrap items-baseline gap-3 mb-2">
 			<h3 class="text-3xl font-semibold text-white">
-				Update {version} <p class="inline font-normal">- {title}</p>
+				Update {version} <span class="inline font-normal">- {title}</span>
 			</h3>
 		</div>
 	</header>
@@ -107,6 +107,7 @@ const updateString = updateType(version)
 		font-weight: 600;
 		margin-top: 1.5rem;
 		margin-bottom: 0.75rem;
+		font-family: var(--font-segoe-ui-variable-display);
 	}
 
 	.prose :global(h3) {
@@ -115,6 +116,7 @@ const updateString = updateType(version)
 		font-weight: 600;
 		margin-top: 1.25rem;
 		margin-bottom: 0.5rem;
+		font-family: var(--font-segoe-ui-variable-display);
 	}
 
 	.prose :global(h4) {
@@ -123,6 +125,7 @@ const updateString = updateType(version)
 		font-weight: 600;
 		margin-top: 1rem;
 		margin-bottom: 0.5rem;
+		font-family: var(--font-segoe-ui-variable-display);
 	}
 
 	.prose :global(p) {

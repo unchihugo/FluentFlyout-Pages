@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@layer utilities {
+  .ease-expo {
+    transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+  }
+}
