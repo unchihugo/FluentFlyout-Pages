@@ -35,10 +35,30 @@ import fluentFlyoutHero_NoTitle from "../assets/FluentFlyoutHero-NoTitle.webp"
 			<div id="releases" class="space-y-8" data-releases-per-page="5">
 				<!-- RELEASES_START -->
 				<ChangelogItem
+					version="v2.4.1"
+					title="Flyout &amp; Widget Fixes"
+					date="2025-12-23"
+					isLatest={true}
+					htmlContent={`<h2>📝 Changelog</h2>
+<ul>
+<li>Up Next Flyout now displays correctly in all supported languages</li>
+<li>Lock Flyout now displays correctly in all supported languages</li>
+<li>Fixed Taskbar Widget hangs/crashes when the native widget was removed by Windows</li>
+<li>Fixed an issue where media thumbnails load later than other info, leading into situations where the thumbnails might be outdated</li>
+<li>Improved Up Next Flyout handling under the hood</li>
+<li>Upon updating, FluentFlyout now sends you a Windows notification to view the changelog (at <a href="https://fluentflyout.com/changelog/">https://fluentflyout.com/changelog/</a>)</li>
+<li>The Tray Icon Menu now has a View Logs button for easier log files access</li>
+<li>Updated app translations (thanks to @oski165, @NimiGames68, @Ste3798, @Aris-Offline, @xsm2, @bropines, @RandomKuchen, @naturbrilian and others on Weblate!)</li>
+<li><strong>Full Changelog</strong>: <a href="https://github.com/unchihugo/FluentFlyout/compare/v2.4.0...v2.4.1">https://github.com/unchihugo/FluentFlyout/compare/v2.4.0...v2.4.1</a></li>
+</ul>
+
+<h2>❤️ Code Contributors</h2>
+<p>@DmitriySalnikov, @unchihugo, @xsm2 on GitHub</p>`} />
+
+				<ChangelogItem
 					version="v2.4"
 					title="Taskbar Widget Buttons &amp; More"
 					date="2025-12-20"
-					isLatest={true}
 					htmlContent={`<img width="643" height="158" alt="image" src="https://github.com/user-attachments/assets/c1b9b0d8-fdde-4451-8f9c-2bdc30257218" />
 
 <h2>📝 Changelog</h2>
