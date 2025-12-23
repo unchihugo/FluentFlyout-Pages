@@ -1,4 +1,25 @@
 #NEWRELEASE
+#TITLE v2.4.1 — Flyout & Widget Fixes
+#DATE 2025-12-23
+#BODY ## 📝 Changelog
+* Up Next Flyout now displays correctly in all supported languages by @DmitriySalnikov in https://github.com/unchihugo/FluentFlyout/pull/223
+* Lock Flyout now displays correctly in all supported languages by @xsm2 in https://github.com/unchihugo/FluentFlyout/pull/227
+* Fixed Taskbar Widget hangs/crashes when the native widget was removed by Windows by @unchihugo in https://github.com/unchihugo/FluentFlyout/pull/228
+* Fixed an issue where media thumbnails load later than other info, leading into situations where the thumbnails might be outdated by @DmitriySalnikov in https://github.com/unchihugo/FluentFlyout/pull/224
+* Improved Up Next Flyout handling under the hood by @DmitriySalnikov in https://github.com/unchihugo/FluentFlyout/pull/224
+* Upon updating, FluentFlyout now sends you a Windows notification to view the changelog (at https://fluentflyout.com/changelog/) by @unchihugo in https://github.com/unchihugo/FluentFlyout/pull/230
+* The Tray Icon Menu now has a View Logs button for easier log files access by @unchihugo in https://github.com/unchihugo/FluentFlyout/pull/230
+* Updated app translations (thanks to @oski165, @NimiGames68, @Ste3798, @Aris-Offline, @xsm2, @bropines, @RandomKuchen, @naturbrilian and others on Weblate!)
+* **Full Changelog**: https://github.com/unchihugo/FluentFlyout/compare/v2.4.0...v2.4.1
+
+## New Contributors
+* @DmitriySalnikov made their first contribution in https://github.com/unchihugo/FluentFlyout/pull/223
+* @xsm2 made their first contribution in https://github.com/unchihugo/FluentFlyout/pull/227
+
+## 📦 How to install
+⬆️ **The update will go live on the Microsoft Store in a few hours**.
+📦 Follow the installer instructions for manual installing/updating, or install the [Microsoft Store](https://apps.microsoft.com/detail/9n45nsm4tnbp) version for automatic updates.
+#NEWRELEASE
 #TITLE v2.4 — Taskbar Widget Buttons & More
 #DATE 2025-12-20
 #BODY <img width="643" height="158" alt="image" src="https://github.com/user-attachments/assets/c1b9b0d8-fdde-4451-8f9c-2bdc30257218" />
