@@ -25,7 +25,7 @@ import FaqItem from "../components/FaqItem.astro"
 			class="relative z-10 flex-1 flex flex-col items-center justify-center gap-3">
 			<div
 				id="hero-card"
-				class="max-w-4xl mx-auto text-center backdrop-blur-2xl backdrop-contrast-150 p-6 md:p-10 lg:py-12 lg:px-12 rounded-xl bg-gray-800/50 border border-gray-500 transition-opacity duration-700">
+				class="max-w-4xl mx-auto text-center backdrop-blur-2xl backdrop-contrast-150 p-6 md:p-10 lg:py-12 lg:px-12 rounded-xl bg-gray-800/50 border border-gray-500/50 transition-opacity duration-700 shadow-lg shadow-gray-950/50">
 				<img
 					src={fluentFlyoutTitle.src}
 					alt="FluentFlyout Banner"
@@ -255,8 +255,7 @@ import FaqItem from "../components/FaqItem.astro"
 						class="rounded-lg transform transition-transform duration-300 w-full border border-gray-500/50"
 						autoplay
 						loop
-						muted
-					/>
+						muted></video>
 				</div>
 				<div class="lg:order-1 text-center lg:text-left">
 					<h3
@@ -679,7 +678,8 @@ import FaqItem from "../components/FaqItem.astro"
 
 		<!-- languages -->
 		<section id="languages" class="my-12 text-center">
-			<h2 class="text-2xl sm:text-3xl font-semibold mb-4 reveal-on-scroll">
+			<h2
+				class="text-2xl sm:text-3xl font-semibold mb-4 reveal-on-scroll">
 				Available in Multiple Languages
 			</h2>
 			<p
@@ -697,7 +697,7 @@ import FaqItem from "../components/FaqItem.astro"
 		</section>
 
 		<div
-			class="relative sm:pt-6 sm:px-12 rounded-2xl overflow-hidden border border-gray-700">
+			class="relative sm:pt-6 sm:px-12 rounded-2xl overflow-hidden border border-gray-700 shadow-lg shadow-gray-950/50">
 			<!-- Gradient Background Layers -->
 			<div
 				class="absolute inset-0 bg-gradient-to-br from-green-500/5 via-emerald-600/5 to-teal-500/10">
@@ -728,7 +728,7 @@ import FaqItem from "../components/FaqItem.astro"
 				<!-- Installation -->
 				<section
 					id="install"
-					class="sm:my-12 text-center bg-gray-700 rounded-xl p-6 sm:p-12 border border-gray-600">
+					class="sm:my-12 text-center bg-gray-700 rounded-xl p-6 sm:p-12 border border-gray-600 shadow-md shadow-gray-950/50">
 					<h2 class="text-3xl sm:text-4xl font-bold mb-4">
 						Get FluentFlyout
 					</h2>
@@ -821,7 +821,7 @@ import FaqItem from "../components/FaqItem.astro"
 
 			<div class="text-center">
 				<div
-					class="bg-gray-800/50 border border-gray-700/50 rounded-lg p-6 sm:p-8">
+					class="bg-gray-800/50 border border-gray-700/50 rounded-lg p-6 sm:p-8 shadow-md shadow-gray-950/50">
 					<h2 class="text-2xl sm:text-3xl font-bold mb-4">
 						Still have questions?
 					</h2>

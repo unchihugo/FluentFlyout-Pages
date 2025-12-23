@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro"
+import fluentFlyoutHero_NoTitle from "../assets/FluentFlyoutHero-NoTitle.webp"
+---
+
+<Layout title="Page Not Found | FluentFlyout">
+	<div
+		class="relative min-h-screen flex items-center justify-center overflow-hidden">
+		<!-- Background Image -->
+		<div class="absolute inset-0">
+			<img
+				src={fluentFlyoutHero_NoTitle.src}
+				alt="FluentFlyout Background"
+				class="w-full h-full object-cover opacity-60 blur"
+			/>
+		</div>
+
+		<!-- Content Card -->
+		<div class="relative z-10 max-w-2xl mx-auto px-6 py-12 text-center">
+			<div
+				class="backdrop-blur-2xl backdrop-contrast-150 p-8 md:p-12 rounded-xl bg-gray-800/50 border border-gray-500/50 shadow-lg shadow-gray-950/50">
+				<!-- 404 Number -->
+				<div
+					class="text-8xl md:text-9xl font-bold text-primary mb-4 tracking-tight font-segoe-ui-variable-display">
+					?
+				</div>
+
+				<!-- Error Message -->
+				<h1
+					class="text-3xl md:text-4xl font-semibold text-gray-100 mb-4">
+					Page not found
+				</h1>
+				<p
+					class="text-lg md:text-xl text-gray-300 mb-8 max-w-lg mx-auto">
+					Sorry, the page you're looking for doesn't exist. It may
+					have been moved or deleted.
+				</p>
+
+				<!-- Action Buttons -->
+				<div
+					class="flex flex-col sm:flex-row justify-center items-center gap-4">
+					<a
+						href="/"
+						class="px-8 py-3 bg-primary rounded-lg transition-all duration-300 button-hover-effect font-medium border-2 border-white/25 hover:bg-gray-50 hover:border-gray-700">
+						Go to Home
+					</a>
+					<a
+						href="/faq"
+						class="px-8 py-3 bg-gray-700/80 text-gray-200 rounded-lg button-hover-effect hover:bg-gray-700 transition-all duration-300 border-2 border-gray-600 font-medium">
+						Visit FAQ
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<script src="../script.js"></script>
